@@ -1,0 +1,49 @@
+
+<h1>Student Registration</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Student Name:
+    <input type="text" name="student_name">
+    <br><br>
+
+    Student ID:
+    <input type="text" name="student_id">
+    <br><br>
+
+    Major:
+    <select name="major">
+        <option>Computer Science</option>
+        <option>Information Technology</option>
+        <option>Animation</option>
+    </select>
+    <br><br>
+
+    Class Standing:
+    <input type="radio" name="standing" value="Freshman"> Freshman
+    <input type="radio" name="standing" value="Sophomore"> Sophomore
+    <input type="radio" name="standing" value="Junior"> Junior
+    <input type="radio" name="standing" value="Senior"> Senior
+    <br><br>
+
+    Programming Languages:
+    <input type="checkbox" name="languages" value="Python"> Python
+    <input type="checkbox" name="languages" value="Java"> Java
+    <input type="checkbox" name="languages" value="SQL"> SQL
+    <br><br>
+
+    Expected Graduation Year:
+    <input type="number" name="graduation">
+    <br><br>
+
+    Comments:
+    <textarea name="comments"></textarea>
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% for error in errors %}
+    <p>{{ error }}</p>
+{% endfor %}
